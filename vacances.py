@@ -14,8 +14,18 @@ class Holidays:
     Args:
         dates (dict[str]->list[date]): list of date for each user
     """
-    def __init__(self, dates={}):
+    def __init__(self, dates={}, users=None):
         self.dates = dates
+
+    @property
+    def users(self):
+        """Return user names."""
+        return list(self.dates.keys())
+
+    @property
+    def nusers(self):
+        """Return the number of users."""
+        return len(self.dates)
 
     @classmethod
     def read(cls, path):
@@ -33,7 +43,7 @@ class Holidays:
                 else:
                     datelist.append(str_to_date(datestr))
             users[user] = set(datelist)
-        return users
+        return cls(users)
 
 
 def date_range_to_list(daterange):
@@ -53,11 +63,15 @@ def this_year():
     return datetime.datetime.today().year
 
 
+WEEKDAYS = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']
+MONTHS = ['Janv', 'Févr', 'Mars', 'Avri', 'Mai', 'Juin', 'Juil', 'Août',
+          'Sept', 'Octo', 'Nove', 'Déce']
 
 
 class Calendar:
-    def __init__(self, year):
+    def __init__(self, year, holidays):
         self.year = year
+        self.holidays = holidays
 
     def monthrange(self, month):
         nextmonth = month % 12 + 1
@@ -71,19 +85,30 @@ class Calendar:
         for i in range(first, last + 1):
             yield datetime.date(self.year, month, i)
 
+    def tohtml(self):
+        def month_to_html(month):
+            s = '<table>\n'
+            s += '<th>{}</th>'.format(MONTHS[month - 1])
+            for day in self.itermonthdates(month):
+                weekday = WEEKDAYS[day.weekday()]
+                d = {'day': day.day, 'weekday': weekday}
+                s += '<tr><td>%(day)02d</td><td>%(weekday)s</td></tr>\n' % d
+            s += '</table>\n'
+            return s
 
-        
+        s = '<table>\n'
+        s += '<tr>'
+        for month in range(1, 13):
+            s += '<td valign="top" align="center">{}</td>'.format(month_to_html(month))
+        s += '</tr>'
+        s += '</table>'
+        return(s)
 
 
 def main():
-    # import sys
-    # import pprint
-    # h = Holidays.read(sys.argv[1])
-    # pprint.pprint(h)
-
-    cal = Calendar(2016)
-    cal.tohtml()
-
+    h = Holidays.read('holidays.json')
+    # cal = Calendar(2016, h)
+    # print(cal.tohtml())
 
 
 
