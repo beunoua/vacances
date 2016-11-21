@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}The title{% endblock %}
+{% block content %}
+    <h1>Hey</h1>
+    <p> I'm happy </p>
+    <div id="calendar">
+        <table>
+            <tr>
+                {% for month in range(1, 13) %}
+                <td valign="top" align="center">
+                    {% include 'month_template.html' %}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<table>
+    <th>{{ calendar.month_name(month) }}</th>
+    {%- for day_number, weekday in calendar.itermonthdays(month) %}
+        <tr><td>{{ day_number }}</td><td>{{ weekday }}</td></tr>
+    {%- endfor %}
+</table>

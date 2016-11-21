@@ -3,6 +3,13 @@ from collections import OrderedDict
 import datetime
 import json
 
+import jinja2
+
+
+WEEKDAYS = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']
+MONTHS = ['Janv', 'Févr', 'Mars', 'Avri', 'Mai', 'Juin', 'Juil', 'Août',
+          'Sept', 'Octo', 'Nove', 'Déce']
+
 
 class Holidays:
     """Store holiday data.
@@ -63,15 +70,14 @@ def this_year():
     return datetime.datetime.today().year
 
 
-WEEKDAYS = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']
-MONTHS = ['Janv', 'Févr', 'Mars', 'Avri', 'Mai', 'Juin', 'Juil', 'Août',
-          'Sept', 'Octo', 'Nove', 'Déce']
-
-
 class Calendar:
     def __init__(self, year, holidays):
         self.year = year
         self.holidays = holidays
+
+    @staticmethod
+    def month_name(monthid):
+        return MONTHS[monthid - 1]
 
     def monthrange(self, month):
         nextmonth = month % 12 + 1
@@ -85,33 +91,24 @@ class Calendar:
         for i in range(first, last + 1):
             yield datetime.date(self.year, month, i)
 
-    def tohtml(self):
-        def month_to_html(month):
-            s = '<table>\n'
-            s += '<th>{}</th>'.format(MONTHS[month - 1])
-            for day in self.itermonthdates(month):
-                weekday = WEEKDAYS[day.weekday()]
-                d = {'day': day.day, 'weekday': weekday}
-                s += '<tr><td>%(day)02d</td><td>%(weekday)s</td></tr>\n' % d
-            s += '</table>\n'
-            return s
+    def itermonthdays(self, month):
+        for date in self.itermonthdates(month):
+            day = '{:02d}'.format(date.day)
+            weekday = WEEKDAYS[date.weekday()]
+            yield day, weekday
 
-        s = '<table>\n'
-        s += '<tr>'
-        for month in range(1, 13):
-            s += '<td valign="top" align="center">{}</td>'.format(month_to_html(month))
-        s += '</tr>'
-        s += '</table>'
-        return(s)
+    def tohtml(self):
+        template_loader = jinja2.FileSystemLoader(searchpath='templates')
+        template_env = jinja2.Environment(loader=template_loader)
+        template = template_env.get_template('template.html')
+        print(template.render(calendar=self))
 
 
 def main():
     h = Holidays.read('holidays.json')
-    # cal = Calendar(2016, h)
-    # print(cal.tohtml())
-
+    cal = Calendar(2016, h)
+    cal.tohtml()
 
 
 if __name__ == "__main__":
     main()
-
