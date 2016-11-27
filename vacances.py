@@ -24,6 +24,12 @@ class Holidays:
     def __init__(self, dates={}, users=None):
         self.dates = dates
 
+    def __str__(self):
+        return str(self.dates)
+
+    def items(self):
+        return self.dates.items()
+
     @property
     def users(self):
         """Return user names."""
@@ -53,21 +59,12 @@ class Holidays:
         return cls(users)
 
 
-def date_range_to_list(daterange):
-    """Return a list of dates from a string representing a date range."""
-    d1, d2 = [str_to_date(s) for s in daterange.split('-')]
-    return [d1 + datetime.timedelta(days=i) for i in range((d2 - d1).days + 1)]
+class Date(datetime.date):
+    def weekday_str(self):
+        return WEEKDAYS[self.weekday()]
 
-
-def str_to_date(s):
-    """Return a `datetime.date` from a string."""
-    day, month = s.split('/')
-    return datetime.date(this_year(), int(month), int(day))
-
-
-def this_year():
-    """Return the year at the current date and time."""
-    return datetime.datetime.today().year
+    def day_str(self):
+        return '{:02d}'.format(self.day)
 
 
 class Calendar:
@@ -89,7 +86,7 @@ class Calendar:
     def itermonthdates(self, month):
         first, last = self.monthrange(month)
         for i in range(first, last + 1):
-            yield datetime.date(self.year, month, i)
+            yield Date(self.year, month, i)
 
     def itermonthdays(self, month):
         for date in self.itermonthdates(month):
@@ -104,11 +101,34 @@ class Calendar:
         print(template.render(calendar=self))
 
 
+def date_range_to_list(daterange):
+    """Return a list of dates from a string representing a date range."""
+    d1, d2 = [str_to_date(s) for s in daterange.split('-')]
+    return [d1 + datetime.timedelta(days=i) for i in range((d2 - d1).days + 1)]
+
+
+def str_to_date(s):
+    """Return a `datetime.date` from a string."""
+    day, month = s.split('/')
+    return datetime.date(this_year(), int(month), int(day))
+
+
+def this_year():
+    """Return the year at the current date and time."""
+    return datetime.datetime.today().year
+
+
 def main():
     h = Holidays.read('holidays.json')
     cal = Calendar(2016, h)
     cal.tohtml()
-
+    # for date in cal.itermonthdates(12):
+    #     print(date, date.weekday(), date.weekday_str(), end=' ')
+    #     for user, holidays in cal.holidays.items():
+    #         if date in holidays:
+    #             print(user, end=' ')
+    #     print()
+    
 
 if __name__ == "__main__":
     main()
