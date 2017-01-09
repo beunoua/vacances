@@ -3,6 +3,17 @@
 {% block content %}
     <h1>Hey</h1>
     <p> I'm happy </p>
+    <div class="legend">
+        <table class="legend">
+            {%- for user in calendar.holidays.users %}
+            <tr><td class="legend_{{user}}_highlight"></td>
+                <td>{{ user }}</td>
+            </tr>
+            {%- endfor %}
+        </table>
+        
+        
+    </div>
     <div id="calendar">
         <table>
             <tr>

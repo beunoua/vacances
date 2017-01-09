@@ -21,7 +21,7 @@ class Holidays:
     Args:
         dates (dict[str]->list[date]): list of date for each user
     """
-    def __init__(self, dates={}, users=None):
+    def __init__(self, dates={}):
         self.dates = dates
 
     def __str__(self):
@@ -29,6 +29,9 @@ class Holidays:
 
     def items(self):
         return self.dates.items()
+
+    def __getitem__(self, key):
+        return self.dates[key]
 
     @property
     def users(self):
@@ -120,14 +123,8 @@ def this_year():
 
 def main():
     h = Holidays.read('holidays.json')
-    cal = Calendar(2016, h)
+    cal = Calendar(2017, h)
     cal.tohtml()
-    # for date in cal.itermonthdates(12):
-    #     print(date, date.weekday(), date.weekday_str(), end=' ')
-    #     for user, holidays in cal.holidays.items():
-    #         if date in holidays:
-    #             print(user, end=' ')
-    #     print()
     
 
 if __name__ == "__main__":

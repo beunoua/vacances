@@ -1,4 +1,4 @@
-<table>
+<table class="month_calendar">
     <th>{{ calendar.month_name(month) }}</th>
     {%- for date in calendar.itermonthdates(month) %}
         {% if date.weekday() in (5, 6) %}
@@ -7,10 +7,10 @@
             <tr class="weekday"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
         {% endif %}
         {% for user, holidays in calendar.holidays.items() %}
-            {% if date in holidays %}
-                <td class="{{user}}_highlight">coucou</td>
+            {% if date in holidays and date.weekday() not in (5, 6) %}
+                <td class="{{user}}_highlight"></td>
             {% else %}
-                <td>{{user}}</td>
+                <td class="user"></td>
             {% endif %}
             
 
