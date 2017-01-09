@@ -137,7 +137,7 @@ def this_year():
 
 def main():
     h = Holidays.read('holidays.yaml')
-    cal = Calendar(2017, h)    
+    cal = Calendar(2017, h)
     cal.tohtml()
     
 

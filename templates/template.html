@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block title %}The title{% endblock %}
 {% block content %}
-    <h1>Hey</h1>
-    <p> I'm happy </p>
+    <h1>Calendrier des vacances {{calendar.year}}</h1>
     <div class="legend">
         <table class="legend">
             {%- for user in calendar.holidays.users %}

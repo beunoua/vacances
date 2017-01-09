@@ -3,35 +3,45 @@
   --highlight1: #6495ED; /* corn flower blue */
   --highlight2: #FF8C00; /* dark orange */
   --highlight3: #9932CC; /* dark orchid */
+  --highlight4: #FF1493; /* deep pink */
 }
 
+
+h1 {
+  text-align: center;
+}
 
 /* -- Legend ------------------------------------------- */
 
-
 div.legend {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 table.legend {
-    border-collapse: separate;
-    border-spacing: 10px 5px;
+  padding-left: 40px;
+  border-collapse: separate;
+  border-spacing: 10px 5px;
 }
 
 .legend_flore_highlight {
-    padding-left: 20px;
-    background-color: var(--highlight1);
+  padding-left: 20px;
+  background-color: var(--highlight1);
 }
 
-.legend_paul_highlight {
+.legend_océane_highlight {
     padding-left: 20px;
     background-color: var(--highlight2);
 }
 
-.legend_bert_highlight {
-    padding-left: 20px;
-    background-color: var(--highlight3);
+.legend_benoist_highlight {
+  padding-left: 20px;
+  background-color: var(--highlight3);
+}
+
+.legend_lydie_highlight {
+  padding-left: 20px;
+  background-color: var(--highlight4);
 }
 
 
@@ -61,11 +71,14 @@ td .user {
     background-color: var(--highlight1);
 }
 
-
-.bert_highlight {
+.oceane_highlight {
     background-color: var(--highlight2);
 }
 
-.paul_highlight {
+.benoist_highlight {
     background-color: var(--highlight3);
+}
+
+.lydie_highlight {
+    background-color: var(--highlight4);
 }
