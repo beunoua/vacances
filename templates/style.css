@@ -19,7 +19,7 @@ table.legend {
     border-spacing: 10px 5px;
 }
 
-.legend_john_highlight {
+.legend_flore_highlight {
     padding-left: 20px;
     background-color: var(--highlight1);
 }
@@ -54,10 +54,10 @@ td .user {
 }
 
 .weekend {
-    background-color: var()
+    background-color: #A9A9A9;
 }
 
-.john_highlight {
+.flore_highlight {
     background-color: var(--highlight1);
 }
 

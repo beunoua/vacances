@@ -4,6 +4,7 @@ import datetime
 import json
 
 import jinja2
+import yaml
 
 
 WEEKDAYS = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']
@@ -47,18 +48,19 @@ class Holidays:
     def read(cls, path):
         """Read a holiday json file."""
         with open(path, 'rt') as f:
-            data = json.load(f, object_pairs_hook=OrderedDict)
+            data = ordered_load(f)
 
-        users = {}
+        users = OrderedDict()
         for user, datestrlist in data.items():
             datelist = []
-            for datestr in datestrlist:
-                if '-' in datestr:
-                    # date is a range.
-                    datelist.extend(date_range_to_list(datestr))
-                else:
-                    datelist.append(str_to_date(datestr))
-            users[user] = set(datelist)
+            if datestrlist is not None:
+                for datestr in datestrlist:
+                    if '-' in datestr:
+                        # date is a range.
+                        datelist.extend(date_range_to_list(datestr))
+                    else:
+                        datelist.append(str_to_date(datestr))
+            users[user.lower()] = set(datelist)
         return cls(users)
 
 
@@ -104,6 +106,18 @@ class Calendar:
         print(template.render(calendar=self))
 
 
+def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
+    class OrderedLoader(Loader):
+        pass
+    def construct_mapping(loader, node):
+        loader.flatten_mapping(node)
+        return object_pairs_hook(loader.construct_pairs(node))
+    OrderedLoader.add_constructor(
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+        construct_mapping)
+    return yaml.load(stream, OrderedLoader)
+
+
 def date_range_to_list(daterange):
     """Return a list of dates from a string representing a date range."""
     d1, d2 = [str_to_date(s) for s in daterange.split('-')]
@@ -122,8 +136,8 @@ def this_year():
 
 
 def main():
-    h = Holidays.read('holidays.json')
-    cal = Calendar(2017, h)
+    h = Holidays.read('holidays.yaml')
+    cal = Calendar(2017, h)    
     cal.tohtml()
     
 
