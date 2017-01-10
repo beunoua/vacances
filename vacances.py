@@ -103,7 +103,7 @@ class Calendar:
         template_loader = jinja2.FileSystemLoader(searchpath='templates')
         template_env = jinja2.Environment(loader=template_loader)
         template = template_env.get_template('template.html')
-        print(template.render(calendar=self))
+        return template.render(calendar=self)
 
 
 def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
@@ -138,7 +138,8 @@ def this_year():
 def main():
     h = Holidays.read('holidays.yaml')
     cal = Calendar(2017, h)
-    cal.tohtml()
+    html = cal.tohtml()
+    print(html)
     
 
 if __name__ == "__main__":

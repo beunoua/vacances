@@ -4,11 +4,13 @@
     <h1>Calendrier des vacances {{calendar.year}}</h1>
     <div class="legend">
         <table class="legend">
+            <tr>
             {%- for user in calendar.holidays.users %}
-            <tr><td class="legend_{{user}}_highlight"></td>
-                <td>{{ user.capitalize().encode('ascii', 'xmlcharrefreplace').decode('ascii') }}</td>
-            </tr>
+            <td class="legend_{{user}}_highlight"></td>
+            <td class="legend_user_string">{{ user.capitalize().encode('ascii', 'xmlcharrefreplace').decode('ascii') }}</td>
+            
             {%- endfor %}
+            </tr>
         </table>
     </div>
     <div id="calendar">

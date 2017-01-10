@@ -44,6 +44,10 @@ table.legend {
   background-color: var(--highlight4);
 }
 
+.legend_user_string {
+  padding-right: 30px;
+}
+
 
 /* Show borders -- debug */
 /*
@@ -57,10 +61,16 @@ table, th, td {
 
 table.month_calendar {
     padding: 0px 0px 0px 0px;
+    font-family: arial;
+}
+
+.month_calendar td {
+  font-size: 10px;
 }
 
 td .user {
-    padding: 10px 10px 10px 10px;
+    /*padding: 10px 10px 10px 10px;*/
+    width: 10px;
 }
 
 .weekend {
