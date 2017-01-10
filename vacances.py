@@ -22,8 +22,9 @@ class Holidays:
     Args:
         dates (dict[str]->list[date]): list of date for each user
     """
-    def __init__(self, dates={}):
+    def __init__(self, dates={}, public=[]):
         self.dates = dates
+        self.public = public
 
     def __str__(self):
         return str(self.dates)
@@ -51,6 +52,7 @@ class Holidays:
             data = ordered_load(f)
 
         users = OrderedDict()
+        public = []
         for user, datestrlist in data.items():
             datelist = []
             if datestrlist is not None:
@@ -60,8 +62,11 @@ class Holidays:
                         datelist.extend(date_range_to_list(datestr))
                     else:
                         datelist.append(str_to_date(datestr))
-            users[user.lower()] = set(datelist)
-        return cls(users)
+            if user != 'Férié':
+                users[user.lower()] = set(datelist)
+            else:
+                public = set(datelist)
+        return cls(users, public)
 
 
 class Date(datetime.date):

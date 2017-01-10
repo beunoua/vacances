@@ -1,9 +1,11 @@
+@charset "utf-8";
 
 :root {
   --highlight1: #6495ED; /* corn flower blue */
   --highlight2: #FF8C00; /* dark orange */
   --highlight3: #9932CC; /* dark orchid */
   --highlight4: #FF1493; /* deep pink */
+  --highlight_férié: #FF0000; /* red */
 }
 
 
@@ -82,15 +84,19 @@ td .user {
     width: 10px;
 }
 
-.weekend {
+tr .weekend {
     background-color: #A9A9A9;
+}
+
+td .férié {
+    background-color: var(--highlight_férié);
 }
 
 .flore_highlight {
     background-color: var(--highlight1);
 }
 
-.oceane_highlight {
+.océane_highlight {
     background-color: var(--highlight2);
 }
 
