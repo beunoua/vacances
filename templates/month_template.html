@@ -1,18 +1,22 @@
-<table class="month_calendar">
-    <th>{{ calendar.month_name(month).encode('ascii', 'xmlcharrefreplace').decode('ascii') }}</th>
-    {%- for date in calendar.itermonthdates(month) %}
-        {% if date.weekday() in (5, 6) %}
-            <tr class="weekend"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
-        {% else %}
-            <tr class="weekday"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
-        {% endif %}
-        {% for user, holidays in calendar.holidays.items() %}
-            {%- if date in holidays and date.weekday() not in (5, 6) %}
-                <td class="{{user}}_highlight"></td>
-            {%- else %}
-                <td class="user"></td>
-            {%- endif %}
+<td class="month">
+    {{ calendar.month_name(month).encode('ascii', 'xmlcharrefreplace').decode('ascii') }}
+    <table class="month_calendar">
+        <tbody>
+        {%- for date in calendar.itermonthdates(month) %}
+            {% if date.weekday() in (5, 6) %}
+                <tr class="weekend"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
+            {% else %}
+                <tr class="weekday"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
+            {% endif %}
+            {% for user, holidays in calendar.holidays.items() %}
+                {%- if date in holidays and date.weekday() not in (5, 6) %}
+                    <td class="{{user}}_highlight"></td>
+                {%- else %}
+                    <td class="user"></td>
+                {%- endif %}
+            {%- endfor %}
+            </tr>
         {%- endfor %}
-        </tr>
-    {%- endfor %}
-</table>
+        </tbody>
+    </table>
+</td>

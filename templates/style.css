@@ -59,9 +59,18 @@ table, th, td {
 
 /* -- Holiday highlights ------------------------------- */
 
+table.calendar {
+  font-family: arial;
+}
+
 table.month_calendar {
-    padding: 0px 0px 0px 0px;
-    font-family: arial;
+  padding: 0px 0px 0px 0px;
+  font-family: arial;
+}
+
+td.month {
+  vertical-align: top;
+  text-align: center;
 }
 
 .month_calendar td {
