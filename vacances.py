@@ -1,7 +1,7 @@
 
 from collections import OrderedDict
 import datetime
-import json
+import sys
 
 import jinja2
 import yaml
@@ -131,8 +131,17 @@ def date_range_to_list(daterange):
 
 def str_to_date(s):
     """Return a `datetime.date` from a string."""
-    day, month = s.split('/')
-    return datetime.date(this_year(), int(month), int(day))
+    tokens = s.split('/')
+    if len(tokens) == 2:
+        day, month = tokens
+        year = this_year()
+    elif len(tokens) == 3:
+        day, month, year = tokens
+        if len(year) == 2:
+            year = '20{}'.format(year)
+    else:
+        raise ValueError("Invalid date string: '{}'".format(s))
+    return datetime.date(int(year), int(month), int(day))
 
 
 def this_year():
@@ -144,7 +153,9 @@ def main():
     h = Holidays.read('holidays.yaml')
     cal = Calendar(2017, h)
     html = cal.tohtml()
-    print(html)
+    with open('cal.html', 'wt') as f:
+        print(html, file=f)
+    print("Wrote output html to cal.html", file=sys.stderr)
     
 
 if __name__ == "__main__":
