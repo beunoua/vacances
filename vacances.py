@@ -149,13 +149,41 @@ def this_year():
     return datetime.datetime.today().year
 
 
+def write_html(html, path):
+    """Write html to file."""
+    with open(path, 'wt') as f:
+        print(html, file=f)
+    print("Wrote output html to {}".format(path), file=sys.stderr)
+
+
+def write_pdf(html, path):
+    """Write html to pdf using pdfkit."""
+    import pdfkit
+
+    options = {
+        'page-size': 'A4',
+        'encoding': 'UTF8',
+        'orientation': 'Landscape',
+        'dpi': 300,
+        'background': '',
+        'zoom': 2.4,
+        'quiet': ''
+    }
+
+    pdfkit.from_string(html, path, options=options)
+    print("Wrote output html to {}".format(path), file=sys.stderr)
+    
+
+
 def main():
     h = Holidays.read('holidays.yaml')
     cal = Calendar(2017, h)
     html = cal.tohtml()
-    with open('cal.html', 'wt') as f:
-        print(html, file=f)
-    print("Wrote output html to cal.html", file=sys.stderr)
+    write_html(html, 'cal.html')
+    write_pdf(html, 'cal.pdf')
+    
+    
+
     
 
 if __name__ == "__main__":
