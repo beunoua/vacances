@@ -179,8 +179,8 @@ def main():
     h = Holidays.read('holidays.yaml')
     cal = Calendar(2017, h)
     html = cal.tohtml()
-    write_html(html, 'cal.html')
-    write_pdf(html, 'cal.pdf')
+    write_html(html, 'index.html')
+    write_pdf(html, 'calendrier_vacances.pdf')
     
     
 
