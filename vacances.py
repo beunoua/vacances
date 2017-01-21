@@ -159,7 +159,15 @@ def write_html(html, path):
 def write_pdf(html, path):
     """Write html to pdf using pdfkit."""
     import pdfkit
+    import re
 
+    # Remove footer that contains the download to pdf link.
+    regex = re.compile('(<footer>.*</footer>)', re.S|re.M)
+    match = regex.search(html)
+    if match:
+        html = html.replace(match.group(1), '')
+
+    # Generate PDF.
     options = {
         'page-size': 'A4',
         'encoding': 'UTF8',
@@ -174,11 +182,15 @@ def write_pdf(html, path):
     print("Wrote output html to {}".format(path), file=sys.stderr)
     
 
+def tail(s):
+    print('\n'.join(s.splitlines()[-10:]))
+
 
 def main():
     h = Holidays.read('holidays.yaml')
     cal = Calendar(2017, h)
     html = cal.tohtml()
+
     write_html(html, 'index.html')
     write_pdf(html, 'calendrier_vacances.pdf')
     

@@ -8,6 +8,11 @@
   --highlight_férié: #FF0000; /* red */
 }
 
+footer {
+  padding-top: 20px;
+  font-size: 14pt;
+  font-family: arial;
+}
 
 h1 {
   text-align: center;
