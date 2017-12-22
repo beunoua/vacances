@@ -1,5 +1,5 @@
 
-
+import argparse
 from collections import OrderedDict
 import datetime
 import sys
@@ -47,7 +47,7 @@ class Holidays:
         return len(self.dates)
 
     @classmethod
-    def read(cls, path):
+    def read(cls, path, year):
         """Read a holiday json file."""
         with open(path, 'rt') as f:
             data = ordered_load(f)
@@ -60,9 +60,9 @@ class Holidays:
                 for datestr in datestrlist:
                     if '-' in datestr:
                         # date is a range.
-                        datelist.extend(date_range_to_list(datestr))
+                        datelist.extend(date_range_to_list(datestr, year))
                     else:
-                        datelist.append(str_to_date(datestr))
+                        datelist.append(str_to_date(datestr, year))
             if user != 'Férié':
                 users[user.lower()] = set(datelist)
             else:
@@ -124,18 +124,17 @@ def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
     return yaml.load(stream, OrderedLoader)
 
 
-def date_range_to_list(daterange):
+def date_range_to_list(daterange, year):
     """Return a list of dates from a string representing a date range."""
-    d1, d2 = [str_to_date(s) for s in daterange.split('-')]
+    d1, d2 = [str_to_date(s, year) for s in daterange.split('-')]
     return [d1 + datetime.timedelta(days=i) for i in range((d2 - d1).days + 1)]
 
 
-def str_to_date(s):
+def str_to_date(s, year):
     """Return a `datetime.date` from a string."""
     tokens = s.split('/')
     if len(tokens) == 2:
         day, month = tokens
-        year = this_year()
     elif len(tokens) == 3:
         day, month, year = tokens
         if len(year) == 2:
@@ -181,15 +180,25 @@ def write_pdf(html, path):
 
     pdfkit.from_string(html, path, options=options)
     print("Wrote output html to {}".format(path), file=sys.stderr)
-    
+
 
 def tail(s):
     print('\n'.join(s.splitlines()[-10:]))
 
 
+def parse_command_line():    
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('holidays', nargs='?', default='holidays.yaml',
+                        help="Holidays file (YAML)")
+    parser.add_argument('-y', '--year', default=this_year(), type=int,
+                        help="Year")
+    return parser.parse_args()
+    
+
 def main():
-    h = Holidays.read('holidays.yaml')
-    cal = Calendar(2017, h)
+    args = parse_command_line()
+    h = Holidays.read(args.holidays, args.year)
+    cal = Calendar(args.year, h)
     html = cal.tohtml()
 
     write_html(html, 'index.html')
