@@ -2,6 +2,7 @@
 import argparse
 from collections import OrderedDict
 import datetime
+import os.path
 import sys
 
 import jinja2
@@ -67,6 +68,7 @@ class Holidays:
                 users[user.lower()] = set(datelist)
             else:
                 public = set(datelist)
+
         return cls(users, public)
 
 
@@ -144,11 +146,6 @@ def str_to_date(s, year):
     return datetime.date(int(year), int(month), int(day))
 
 
-def this_year():
-    """Return the year at the current date and time."""
-    return datetime.datetime.today().year
-
-
 def write_html(html, path):
     """Write html to file."""
     with open(path, 'wt') as f:
@@ -186,27 +183,41 @@ def tail(s):
     print('\n'.join(s.splitlines()[-10:]))
 
 
-def parse_command_line():    
+def parse_command_line():
+    def this_year():
+        """Return the year at the current date and time."""
+        return datetime.datetime.today().year
+
+    def guess_year(args):
+        basename, ext = os.path.splitext(os.path.basename(os.path.realpath(args.holidays)))
+        tokens = basename.split('_')
+        if len(tokens) == 2:
+            try:
+                return int(tokens[1])
+            except:
+                pass
+        return this_year()
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('holidays', nargs='?', default='holidays.yaml',
                         help="Holidays file (YAML)")
-    parser.add_argument('-y', '--year', default=this_year(), type=int,
+    parser.add_argument('-y', '--year', default=None, type=int,
                         help="Year")
-    return parser.parse_args()
+    args = parser.parse_args()
+    args.year = guess_year(args)
+    return args
     
 
 def main():
     args = parse_command_line()
+
     h = Holidays.read(args.holidays, args.year)
     cal = Calendar(args.year, h)
     html = cal.tohtml()
 
     write_html(html, 'index.html')
     write_pdf(html, 'calendrier_vacances.pdf')
-    
-    
 
-    
 
 if __name__ == "__main__":
     main()
