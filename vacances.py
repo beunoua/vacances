@@ -208,10 +208,28 @@ def parse_command_line():
     return args
     
 
+def number_days_off(dates, public):
+    s = 0
+    for date in dates:
+        if date.weekday() not in (5, 6) and date not in public:
+            s += 1
+    return s
+
+
+def number_days_off2(dates, public):
+    off = [d for d in dates if d.weekday() not in (5, 6) and d not in public]
+    return len(off)
+
+
 def main():
     args = parse_command_line()
 
     h = Holidays.read(args.holidays, args.year)
+
+    print("Number off days off:")
+    for user, dates in h.dates.items():
+        print("  {:10s}  {:>3d}".format(user, number_days_off(dates, h.public)))
+
     cal = Calendar(args.year, h)
     html = cal.tohtml()
 
@@ -221,3 +239,16 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# import timeit
+
+# args = parse_command_line()
+# h = Holidays.read(args.holidays, args.year)
+# dates = h.dates['benoist']
+# public = h.public
+
+# print(timeit.timeit("number_days_off(dates, public)", number=100000, globals=globals()))
+# print(timeit.timeit("number_days_off2(dates, public)", number=100000, globals=globals()))
+
+
