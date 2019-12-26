@@ -59,6 +59,8 @@ class Holidays:
             datelist = []
             if datestrlist is not None:
                 for datestr in datestrlist:
+                    if datestr is None:
+                        raise ValueError(f"user: {user}: empty date string")
                     if '-' in datestr:
                         # date is a range.
                         datelist.extend(date_range_to_list(datestr, year))
@@ -143,7 +145,10 @@ def str_to_date(s, year):
             year = '20{}'.format(year)
     else:
         raise ValueError("Invalid date string: '{}'".format(s))
-    return datetime.date(int(year), int(month), int(day))
+    try:
+        return datetime.date(int(year), int(month), int(day))
+    except ValueError:
+        raise ValueError(f"day is out of range: {year}/{month}/{day}")
 
 
 def write_html(html, path):
