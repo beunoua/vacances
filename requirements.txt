@@ -1,4 +1,4 @@
-Jinja2==2.9.4
-MarkupSafe==0.23
+Jinja2==2.11.2
+MarkupSafe==1.1.1
 pdfkit==0.6.1
-PyYAML==3.12
+PyYAML==5.3.1
