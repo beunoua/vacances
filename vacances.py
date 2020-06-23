@@ -176,7 +176,7 @@ def write_pdf(html, path):
         'orientation': 'Landscape',
         'dpi': 300,
         'background': '',
-        'zoom': 2.4,
+        'zoom': 1.3,
         'quiet': ''
     }
 
