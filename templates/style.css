@@ -31,25 +31,15 @@ table.legend {
   border-spacing: 10px 5px;
 }
 
-.legend_flore_highlight {
+.legend_vacances_scolaires_highlight {
   padding-left: 20px;
   background-color: #6495ED;
 }
 
-.legend_océane_highlight {
-  padding-left: 20px;
-  background-color: #FF8C00;
+.legend_férié_highlight {
+  background-color: #FF0000;
 }
 
-.legend_benoist_highlight {
-  padding-left: 20px;
-  background-color: #9932CC;
-}
-
-.legend_lydie_highlight {
-  padding-left: 20px;
-  background-color: #228B22;
-}
 
 .legend_user_string {
   padding-right: 30px;
@@ -102,18 +92,6 @@ td .férié {
   background-color: #FF0000;
 }
 
-.flore_highlight {
+.vacances_scolaires_highlight {
   background-color: #6495ED;
-}
-
-.océane_highlight {
-  background-color: #FF8C00;
-}
-
-.benoist_highlight {
-  background-color: #9932CC;
-}
-
-.lydie_highlight {
-  background-color: #228B22;
 }

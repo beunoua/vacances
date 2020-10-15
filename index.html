@@ -37,25 +37,15 @@ table.legend {
   border-spacing: 10px 5px;
 }
 
-.legend_flore_highlight {
+.legend_vacances_scolaires_highlight {
   padding-left: 20px;
   background-color: #6495ED;
 }
 
-.legend_océane_highlight {
-  padding-left: 20px;
-  background-color: #FF8C00;
+.legend_férié_highlight {
+  background-color: #FF0000;
 }
 
-.legend_benoist_highlight {
-  padding-left: 20px;
-  background-color: #9932CC;
-}
-
-.legend_lydie_highlight {
-  padding-left: 20px;
-  background-color: #228B22;
-}
 
 .legend_user_string {
   padding-right: 30px;
@@ -108,20 +98,8 @@ td .férié {
   background-color: #FF0000;
 }
 
-.flore_highlight {
+.vacances_scolaires_highlight {
   background-color: #6495ED;
-}
-
-.océane_highlight {
-  background-color: #FF8C00;
-}
-
-.benoist_highlight {
-  background-color: #9932CC;
-}
-
-.lydie_highlight {
-  background-color: #228B22;
 }</style>
     </head>
     <body>
@@ -131,15 +109,15 @@ td .férié {
     <div class="legend">
         <table class="legend">
             <tr>
-            <td class="legend_flore_highlight"></td>
-            <td class="legend_user_string">Flore</td>
-            <td class="legend_océane_highlight"></td>
-            <td class="legend_user_string">Oc&#233;ane</td>
-            <td class="legend_lydie_highlight"></td>
-            <td class="legend_user_string">Lydie</td>
-            <td class="legend_benoist_highlight"></td>
-            <td class="legend_user_string">Benoist</td>
+            <td class="legend_vacances_scolaires_highlight"></td>
+            <td class="legend_user_string">Vacances scolaires</td>
             </tr>
+
+            <tr>
+            <td class="legend_férié_highlight"></td>
+            <td class="legend_user_string">Férié</td>
+            </tr>
+
         </table>
     </div>
     <div id="calendar">
@@ -154,248 +132,155 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Me</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>04</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>05</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>11</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>12</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>18</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>19</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>25</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>26</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>31</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -411,232 +296,145 @@ td .férié {
         <tbody>
                 <tr class="weekend"><td>01</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>02</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>08</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>09</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>15</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>16</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>22</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>23</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>29</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -652,248 +450,155 @@ td .férié {
         <tbody>
                 <tr class="weekend"><td>01</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>07</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>08</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>14</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>15</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>21</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>22</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>28</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>29</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>31</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -909,240 +614,150 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>04</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>05</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>11</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>12</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Lu</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>18</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>19</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>25</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>26</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -1158,248 +773,155 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Ve</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>02</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>03</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Ve</td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                     <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>09</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>10</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>16</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>17</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="lydie_highlight"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Je</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>23</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>24</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>30</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>31</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -1415,240 +937,150 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Lu</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>06</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>07</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>13</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>14</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>20</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>21</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>27</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>28</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -1664,249 +1096,156 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>04</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>05</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>11</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>12</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Ma</td>
                     <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>18</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>19</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>25</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>26</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>31</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
@@ -1921,249 +1260,156 @@ td .férié {
         <tbody>
                 <tr class="weekend"><td>01</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>02</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>08</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>09</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>15</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>16</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>22</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>23</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>29</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>30</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>31</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
@@ -2178,240 +1424,150 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>05</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>06</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>12</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>13</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>19</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>20</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>26</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>27</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -2427,136 +1583,85 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Ve</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>03</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>04</td><td>Di</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>10</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>11</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>12</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>17</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         B
@@ -2564,62 +1669,41 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>18</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekend"><td>24</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         L
@@ -2627,57 +1711,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>25</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Ve</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>31</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         B
@@ -2694,57 +1757,36 @@ td .férié {
         <tbody>
                 <tr class="weekend"><td>01</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>05</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>06</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>07</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         L
@@ -2752,33 +1794,21 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>08</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Me</td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                     <td class="férié"></td>
                 <td class="care">
                         L
@@ -2786,24 +1816,15 @@ td .férié {
             </tr>
                 <tr class="weekday"><td>12</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>13</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>14</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         B
@@ -2811,57 +1832,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>15</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>19</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>20</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>21</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         L
@@ -2869,57 +1869,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>22</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>26</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>27</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>28</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         B
@@ -2927,17 +1906,11 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>29</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Lu</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
@@ -2953,40 +1926,25 @@ td .férié {
         <tbody>
                 <tr class="weekday"><td>01</td><td>Ma</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>02</td><td>Me</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>03</td><td>Je</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>04</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>05</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         L
@@ -2994,57 +1952,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>06</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>07</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>08</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>09</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>10</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>11</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>12</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         B
@@ -3052,57 +1989,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>13</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>14</td><td>Lu</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>15</td><td>Ma</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>16</td><td>Me</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>17</td><td>Je</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekday"><td>18</td><td>Ve</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                 </td>
             </tr>
                 <tr class="weekend"><td>19</td><td>Sa</td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                     <td class="user"></td>
                 <td class="care">
                         L
@@ -3110,53 +2026,35 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>20</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>21</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>22</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>23</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>24</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="user"></td>
-                    <td class="benoist_highlight"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>25</td><td>Ve</td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
-                    <td class="férié"></td>
                     <td class="férié"></td>
                 <td class="care">
                         B
@@ -3164,54 +2062,36 @@ td .férié {
             </tr>
                 <tr class="weekend"><td>26</td><td>Sa</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekend"><td>27</td><td>Di</td>
                     <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
-                    <td class="user"></td>
                 <td class="care">
                         B
                 </td>
             </tr>
                 <tr class="weekday"><td>28</td><td>Lu</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>29</td><td>Ma</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>30</td><td>Me</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>
             </tr>
                 <tr class="weekday"><td>31</td><td>Je</td>
-                    <td class="flore_highlight"></td>
-                    <td class="océane_highlight"></td>
-                    <td class="lydie_highlight"></td>
-                    <td class="user"></td>
+                    <td class="vacances_scolaires_highlight"></td>
                 <td class="care">
                         L
                 </td>

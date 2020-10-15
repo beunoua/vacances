@@ -12,7 +12,7 @@
                 {%- if date in calendar.holidays.public and date.weekday() not in (5, 6) %}
                     <td class="férié"></td>
                 {%- elif date in holidays and date.weekday() not in (5, 6) %}
-                    <td class="{{user}}_highlight"></td>
+                    <td class="{{'_'.join(user.split())}}_highlight"></td>
                 {%- else %}
                     <td class="user"></td>
                 {%- endif %}
