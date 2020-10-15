@@ -67,8 +67,6 @@ class DateCollection:
         self.dates[user] |= {date}
 
 
-
-
 class Holidays(DateCollection):
     """Store holidays.
 
@@ -157,11 +155,10 @@ class Calendar:
         return template.render(calendar=self)
 
 
-
-
 def weekid(date):
     """Returns the date week id."""
     return date.isocalendar()[1]
+
 
 def read_date_yaml(path, year):
     """Reads a yaml file containing users and date ranges for each user."""
@@ -227,7 +224,7 @@ def write_html(html, path):
     print("Wrote output html to {}".format(path), file=sys.stderr)
 
 
-def write_pdf(html, path):
+def write_pdf(html, path, zoom):
     """Writes html to pdf using pdfkit."""
     import pdfkit
     import re
@@ -245,7 +242,7 @@ def write_pdf(html, path):
         "orientation": "Landscape",
         "dpi": 300,
         "background": "",
-        "zoom": 1.2,
+        "zoom": zoom,
         "quiet": ""
     }
 
@@ -286,6 +283,8 @@ def parse_command_line():
                         help="date when child care starts")
     parser.add_argument("--first-care",
                         help="first parent to start child care")
+    parser.add_argument("--pdf-zoom", type=float, default=2.4,
+                        help="zoom factor for PDF rendering")
     args = parser.parse_args()
     args.year = guess_year(args)
     return args
@@ -315,7 +314,7 @@ def main():
     html = cal.tohtml()
 
     write_html(html, "index.html")
-    # write_pdf(html, "calendrier_vacances.pdf")
+    write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
 
 
 
