@@ -306,7 +306,7 @@ def main():
         first_care = care.users[0]
     else:
         assert first_care in care.users
-    care.guess_care_weeks(start=args.care_start, first_care=first_care)
+    care.guess_care_weeks(start=care_start, first_care=first_care)
 
     # Reads holidays.
     holidays = Holidays(read_date_yaml(args.holidays, args.year))
@@ -315,7 +315,7 @@ def main():
     html = cal.tohtml()
 
     write_html(html, "index.html")
-    write_pdf(html, "calendrier_vacances.pdf")
+    # write_pdf(html, "calendrier_vacances.pdf")
 
 
 

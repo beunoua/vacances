@@ -6,11 +6,16 @@
         <table class="legend">
             <tr>
             {%- for user in calendar.holidays.users %}
-            <td class="legend_{{user}}_highlight"></td>
+            <td class="legend_{{'_'.join(user.split())}}_highlight"></td>
             <td class="legend_user_string">{{ user.capitalize().encode('ascii', 'xmlcharrefreplace').decode('ascii') }}</td>
-            
             {%- endfor %}
             </tr>
+
+            <tr>
+            <td class="legend_férié_highlight"></td>
+            <td class="legend_user_string">Férié</td>
+            </tr>
+
         </table>
     </div>
     <div id="calendar">
