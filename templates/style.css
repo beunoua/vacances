@@ -18,6 +18,18 @@ h1 {
   text-align: center;
 }
 
+div.comments {
+  padding-top: 30px;
+}
+
+
+/* Show borders -- debug */
+/*
+table, th, td {
+   border: 1px solid black;
+}
+*/
+
 /* -- Legend ------------------------------------------- */
 
 div.legend {
@@ -44,14 +56,6 @@ table.legend {
 .legend_user_string {
   padding-right: 30px;
 }
-
-
-/* Show borders -- debug */
-/*
-table, th, td {
-   border: 1px solid black;
-}
-*/
 
 
 /* -- Holiday highlights ------------------------------- */

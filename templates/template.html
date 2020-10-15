@@ -31,8 +31,10 @@
         </table>
     </div>
     {% if calendar.comments is not none %}
-    <div id="comments">
-
+    <div class="comments">
+        {% for line in calendar.comments.splitlines() %}
+        <p>{{ line }}</p>
+        {% endfor %}
     </div>
     {% endif %}
     <footer>

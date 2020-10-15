@@ -125,10 +125,11 @@ class Care(DateCollection):
 
 class Calendar:
     """A calendar to be rendered in as HTML."""
-    def __init__(self, year, holidays, care):
+    def __init__(self, year, holidays, care, comments=None):
         self.year = year
         self.holidays = holidays
         self.care = care
+        self.comments = comments
 
     @staticmethod
     def month_name(monthid):
@@ -310,20 +311,28 @@ def parse_command_line():
                         help="first parent to start child care")
     parser.add_argument("--no-pdf", action="store_true",
                         help="no PDF rendering")
-    parser.add_argument("--pdf-zoom", type=float, default=2.4,
+    parser.add_argument("--pdf-zoom", type=float, default=2.,
                         help="zoom factor for PDF rendering")
+    parser.add_argument("-c", "--comments",
+                        help="commentary file")
     args = parser.parse_args()
     args.year = guess_year(args)
     return args
 
 
+def read_comments(path):
+    """Reads comment file."""
+    with open(path, "rt") as fp:
+        return fp.read()
+
+
 def main():
     args = parse_command_line()
 
+    # Default care start to January 1st unless specified.
     care_start = args.care_start
     if not care_start:
         care_start = is_date(f"{args.year}-01-01")
-
 
     # Reads care.
     care = Care(read_date_yaml(args.care, args.year))
@@ -337,9 +346,14 @@ def main():
     # Reads holidays.
     holidays = Holidays(read_date_yaml(args.holidays, args.year))
 
-    cal = Calendar(args.year, holidays, care)
+    # Reads comments.
+    comments = read_comments(args.comments) if args.comments else None
+    
+    # Calendar creation.
+    cal = Calendar(args.year, holidays, care, comments)
     html = cal.tohtml()
 
+    # Calendar output.
     write_html(html, "index.html")
     if not args.no_pdf:
         write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
