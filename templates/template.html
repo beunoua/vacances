@@ -5,10 +5,10 @@
     <div class="legend">
         <table class="legend">
             <tr>
-            {%- for user in calendar.holidays.users %}
+            {% for user in calendar.holidays.users %}
             <td class="legend_{{'_'.join(user.split())}}_highlight"></td>
             <td class="legend_user_string">{{ user.capitalize().encode('ascii', 'xmlcharrefreplace').decode('ascii') }}</td>
-            {%- endfor %}
+            {% endfor %}
             </tr>
 
             <tr>
@@ -30,6 +30,11 @@
             </tbody>
         </table>
     </div>
+    {% if calendar.comments is not none %}
+    <div id="comments">
+
+    </div>
+    {% endif %}
     <footer>
         <p><a href="calendrier_vacances.pdf">Télécharger au format pdf</a></p>
     </footer>

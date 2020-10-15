@@ -2,32 +2,32 @@
     {{ calendar.month_name(month).encode('ascii', 'xmlcharrefreplace').decode('ascii') }}
     <table class="month_calendar">
         <tbody>
-        {%- for date in calendar.itermonthdates(month) %}
-            {%- if date.weekday() in (5, 6) %}
+        {% for date in calendar.itermonthdates(month) %}
+            {% if date.weekday() in (5, 6) %}
                 <tr class="weekend"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
-            {%- else %}
+            {% else %}
                 <tr class="weekday"><td>{{ date.day_str() }}</td><td>{{ date.weekday_str() }}</td>
-            {%- endif %}
-            {%- for user, holidays in calendar.holidays.items() %}
-                {%- if date in calendar.holidays.public and date.weekday() not in (5, 6) %}
+            {% endif %}
+            {% for user, holidays in calendar.holidays.items() %}
+                {% if date in calendar.holidays.public and date.weekday() not in (5, 6) %}
                     <td class="férié"></td>
-                {%- elif date in holidays and date.weekday() not in (5, 6) %}
+                {% elif date in holidays and date.weekday() not in (5, 6) %}
                     <td class="{{'_'.join(user.split())}}_highlight"></td>
-                {%- else %}
+                {% else %}
                     <td class="user"></td>
-                {%- endif %}
-            {%- endfor %}
-            {%- if calendar.care %}
+                {% endif %}
+            {% endfor %}
+            {% if calendar.care %}
                 <td class="care">
-                {%- for user, dates in calendar.care.items() %}
-                    {%- if date in dates %}
+                {% for user, dates in calendar.care.items() %}
+                    {% if date in dates %}
                         {{user[0].upper()}}
-                    {%- endif %}
-                {%- endfor %}
+                    {% endif %}
+                {% endfor %}
                 </td>
-            {%- endif %}
+            {% endif %}
             </tr>
-        {%- endfor %}
+        {% endfor %}
         </tbody>
     </table>
 </td>
