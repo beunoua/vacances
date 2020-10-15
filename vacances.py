@@ -1,4 +1,4 @@
-
+"""Creates the holidays/care calendar."""
 
 import argparse
 import calendar
@@ -17,11 +17,14 @@ MONTHS = ["Janv", "Févr", "Mars", "Avri", "Mai", "Juin", "Juil", "Août",
 
 
 class Date(datetime.date):
+    """A simple date class with additional helper methods."""
     def weekday_str(self):
+        """Returns a string corresponding to the week day."""
         return WEEKDAYS[self.weekday()]
 
     def day_str(self):
-        return "{:02d}".format(self.day)
+        """Returns the date zero-padded day number."""
+        return f"{self.day:02d}"
 
 
 class DateCollection:
@@ -35,19 +38,23 @@ class DateCollection:
     Args:
         dates (dict[str]->list[date]): list of date for each user
     """
-    def __init__(self, dates={}):
+    def __init__(self, dates=None):
+        if dates is None:
+            dates = {}
         self.dates = dates
 
     def __str__(self):
         return str(self.dates)
 
     def items(self):
+        """Iterates over dates."""
         return self.dates.items()
 
     def __getitem__(self, key):
         return self.dates[key]
 
     def date_is_free(self, date):
+        """Returns True if a date is not defined in a user date list."""
         for dates in self.dates.values():
             if date in dates:
                 return False
@@ -62,8 +69,9 @@ class DateCollection:
     def nusers(self):
         """Returns the number of users."""
         return len(self.dates)
-    
+
     def append(self, user, date):
+        """Add a date to a user date list."""
         self.dates[user] |= {date}
 
 
@@ -73,7 +81,7 @@ class Holidays(DateCollection):
     Basically a DateCollection with special "public" attribute for
     public holidays ("férié").
     """
-    def __init__(self, dates={}):
+    def __init__(self, dates=None):
         super().__init__(dates)
         self.public = self.dates.pop("férié", {})
 
@@ -84,9 +92,6 @@ class Care(DateCollection):
     Basically a DateCollection with a special method that guesses the care
     method according to the week number.
     """
-    def __init__(self, dates={}):
-        super().__init__(dates)
-    
     def guess_care_weeks(self, start=None, first_care=""):
         """Guesses care method according to week number.
 
@@ -98,10 +103,9 @@ class Care(DateCollection):
             assert first_care in self.dates
         else:
             first_care = list(self.dates.keys())[0]
-        
 
         cal = calendar.Calendar()
-        
+
         # Reorders users so that the first_care comes first.
         order = [self.users.index(first_care)]
         for i in range(len(self.users)):
@@ -110,7 +114,6 @@ class Care(DateCollection):
         users = [self.users[i] for i in order]
 
         first_weekid = weekid(start)
-
 
         for current_month in range(start.month, 13):
             for date in cal.itermonthdates(start.year, current_month):
@@ -121,6 +124,7 @@ class Care(DateCollection):
 
 
 class Calendar:
+    """A calendar to be rendered in as HTML."""
     def __init__(self, year, holidays, care):
         self.year = year
         self.holidays = holidays
@@ -128,9 +132,11 @@ class Calendar:
 
     @staticmethod
     def month_name(monthid):
+        """Returns a month name."""
         return MONTHS[monthid - 1]
 
     def monthrange(self, month):
+        """Returns a tuple (1, <last_day_of_the_month>)."""
         nextmonth = month % 12 + 1
         nextyear = self.year + 1 if nextmonth == 1 else self.year
         firstday = datetime.date(self.year, month, 1)
@@ -138,17 +144,24 @@ class Calendar:
         return (1, (lastday - firstday).days)
 
     def itermonthdates(self, month):
+        """Iterates over a month dates."""
         first, last = self.monthrange(month)
         for i in range(first, last + 1):
             yield Date(self.year, month, i)
 
     def itermonthdays(self, month):
+        """Iterates over a month days.
+
+        Yields:
+            (str, str): zero-padded day number, day name
+        """
         for date in self.itermonthdates(month):
-            day = "{:02d}".format(date.day)
+            day = f"{date.day:02d}"
             weekday = WEEKDAYS[date.weekday()]
             yield day, weekday
 
     def tohtml(self):
+        """Renders calendar to HTML."""
         template_loader = jinja2.FileSystemLoader(searchpath="templates")
         template_env = jinja2.Environment(loader=template_loader)
         template = template_env.get_template("template.html")
@@ -183,11 +196,14 @@ def read_date_yaml(path, year):
 
 
 def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
+    """Loads a YAML file in an orderly fashion."""
     class OrderedLoader(Loader):
-        pass
+        """Dummy Loader used for ordered load."""
+
     def construct_mapping(loader, node):
         loader.flatten_mapping(node)
         return object_pairs_hook(loader.construct_pairs(node))
+
     OrderedLoader.add_constructor(
         yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
         construct_mapping)
@@ -196,13 +212,14 @@ def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
 
 def date_range_to_list(daterange, year):
     """Returns a list of dates from a string representing a date range."""
-    d1, d2 = [str_to_date(s, year) for s in daterange.split("-")]
-    return [d1 + datetime.timedelta(days=i) for i in range((d2 - d1).days + 1)]
+    start, end = [str_to_date(s, year) for s in daterange.split("-")]
+    return [start + datetime.timedelta(days=i)
+            for i in range((end - start).days + 1)]
 
 
-def str_to_date(s, year):
+def str_to_date(date_string, year):
     """Returns a `datetime.date` from a string."""
-    tokens = s.split("/")
+    tokens = date_string.split("/")
     if len(tokens) == 2:
         day, month = tokens
     elif len(tokens) == 3:
@@ -210,11 +227,11 @@ def str_to_date(s, year):
         if len(year) == 2:
             year = "20{}".format(year)
     else:
-        raise ValueError("Invalid date string: '{}'".format(s))
+        raise ValueError("Invalid date string: '{}'".format(date_string))
     try:
         return datetime.date(int(year), int(month), int(day))
-    except ValueError:
-        raise ValueError(f"day is out of range: {year}/{month}/{day}")
+    except ValueError as exc:
+        raise ValueError(f"day is out of range: {year}/{month}/{day}") from exc
 
 
 def write_html(html, path):
@@ -255,23 +272,31 @@ def this_year():
     return datetime.datetime.today().year
 
 
-def is_date(s):
-    year, month, day = [int(token) for token in s.split("-")]
+def is_date(date_string):
+    """Converts a date string to a date.
+
+    Args:
+        date_string (str): date string in the format yyyy-mm-dd
+
+    Returns:
+        datetime.Date
+    """
+    year, month, day = [int(token) for token in date_string.split("-")]
     return datetime.date(year, month, day)
 
 
 def parse_command_line():
+    """Command-line parsing."""
     def guess_year(args):
-        basename, ext = os.path.splitext(os.path.basename(os.path.realpath(args.holidays)))
+        basename = os.path.splitext(os.path.basename(os.path.realpath(args.holidays)))[0]
         tokens = basename.split("_")
         if len(tokens) == 2:
             try:
                 return int(tokens[1])
-            except:
+            except Exception:
                 pass
         return this_year()
-    
-    
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("holidays", nargs="?", default="holidays.yaml",
                         help="Holidays file (YAML)")
@@ -283,12 +308,14 @@ def parse_command_line():
                         help="date when child care starts")
     parser.add_argument("--first-care",
                         help="first parent to start child care")
+    parser.add_argument("--no-pdf", action="store_true",
+                        help="no PDF rendering")
     parser.add_argument("--pdf-zoom", type=float, default=2.4,
                         help="zoom factor for PDF rendering")
     args = parser.parse_args()
     args.year = guess_year(args)
     return args
-    
+
 
 def main():
     args = parse_command_line()
@@ -314,8 +341,8 @@ def main():
     html = cal.tohtml()
 
     write_html(html, "index.html")
-    write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
-
+    if not args.no_pdf:
+        write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
 
 
 if __name__ == "__main__":
