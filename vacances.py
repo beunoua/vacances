@@ -114,13 +114,15 @@ class Care(DateCollection):
         users = [self.users[i] for i in order]
 
         first_weekid = weekid(start)
+        week_counter = 0
 
         for current_month in range(start.month, 13):
             for date in cal.itermonthdates(start.year, current_month):
                 if date >= start and (self.date_is_free(date) and date.weekday() > 4):
-                    week_counter = first_weekid + weekid(date)
                     mod = week_counter % self.nusers
                     self.append(users[mod], date)
+                if date.weekday() == 6:
+                    week_counter += 1
 
 
 class Calendar:
