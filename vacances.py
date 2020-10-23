@@ -265,7 +265,7 @@ def write_pdf(html, path, zoom):
     }
 
     pdfkit.from_string(html, path, options=options)
-    print("Wrote output html to {}".format(path), file=sys.stderr)
+    print(f"Wrote output pdf to {path}", file=sys.stderr)
 
 
 def this_year():
