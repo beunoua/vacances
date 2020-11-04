@@ -18,6 +18,11 @@ MONTHS = ["Janv", "Févr", "Mars", "Avri", "Mai", "Juin", "Juil", "Août",
 
 class Date(datetime.date):
     """A simple date class with additional helper methods."""
+
+    @classmethod
+    def from_date(cls, date):
+        return cls(date.year, date.month, date.day)
+
     def weekday_str(self):
         """Returns a string corresponding to the week day."""
         return WEEKDAYS[self.weekday()]
@@ -25,6 +30,12 @@ class Date(datetime.date):
     def day_str(self):
         """Returns the date zero-padded day number."""
         return f"{self.day:02d}"
+    
+    def is_weekend(self):
+        return self.weekday() > 4
+    
+    def is_sunday(self):
+        return self.weekday() == 6
 
 
 class DateCollection:
@@ -118,10 +129,11 @@ class Care(DateCollection):
 
         for current_month in range(start.month, 13):
             for date in cal.itermonthdates(start.year, current_month):
-                if date >= start and (self.date_is_free(date) and date.weekday() > 4):
+                date = Date.from_date(date)
+                if date >= start and (self.date_is_free(date) and date.is_weekend()):
                     mod = week_counter % self.nusers
                     self.append(users[mod], date)
-                if date.weekday() == 6:
+                if date.is_sunday():
                     week_counter += 1
 
 
