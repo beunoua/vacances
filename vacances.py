@@ -329,6 +329,8 @@ def parse_command_line():
                         help="zoom factor for PDF rendering")
     parser.add_argument("-c", "--comments",
                         help="commentary file")
+    parser.add_argument("--output-dir", default=".",
+                        help="output directory for index.html and calendrier_vacances.pdf")
     args = parser.parse_args()
     args.year = guess_year(args)
     return args
@@ -342,6 +344,14 @@ def read_comments(path):
 
 def main():
     args = parse_command_line()
+
+    # Check output directory exists (and is a directory).
+    if not os.path.isdir(args.output_dir):
+        raise NotADirectoryError("invalid output directory "
+                                 f"'{args.output_dir}'")
+
+    output_html = os.path.join(args.output_dir, "index.html")
+    output_pdf = os.path.join(args.output_dir, "calendrier_vacances.pdf")
 
     # Default care start to January 1st unless specified.
     care_start = args.care_start
@@ -368,9 +378,9 @@ def main():
     html = cal.tohtml()
 
     # Calendar output.
-    write_html(html, "index.html")
+    write_html(html, output_html)
     if not args.no_pdf:
-        write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
+        write_pdf(html, output_pdf, args.pdf_zoom)
 
 
 if __name__ == "__main__":
