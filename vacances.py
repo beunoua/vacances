@@ -70,6 +70,10 @@ class DateCollection:
             if date in dates:
                 return False
         return True
+    
+    def date_is_free_weekend(self, date):
+        """Returns is free and is a weekend."""
+        return date.is_weekend() and self.date_is_free(date)
 
     @property
     def users(self):
@@ -128,13 +132,19 @@ class Care(DateCollection):
         week_counter = 0
 
         for current_month in range(start.month, 13):
+        #     if current_month in (3, 4):
+        #           for date in cal.itermonthdates(start.year, current_month):
+        #               print(date)  
+        #     print("-" * 30)
+        # exit()
             for date in cal.itermonthdates(start.year, current_month):
-                date = Date.from_date(date)
-                if date >= start and (self.date_is_free(date) and date.is_weekend()):
-                    mod = week_counter % self.nusers
-                    self.append(users[mod], date)
-                if date.is_sunday():
-                    week_counter += 1
+                if date.month == current_month:
+                    date = Date.from_date(date)
+                    if date >= start and self.date_is_free_weekend(date):
+                        mod = week_counter % self.nusers
+                        self.append(users[mod], date)
+                    if date.is_sunday():
+                        week_counter += 1
 
 
 class Calendar:
