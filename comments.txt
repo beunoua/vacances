@@ -1,3 +1,5 @@
-1. Benoist garde les enfants du dimanche soir au jeudi soir en période scolaire et un weekend sur deux
-2. Le parent qui garde les enfants le weekend les récupère le vendredi soir avant de dîner
-3. En période scolaire, le dîner et le coucher du dimanche soir se font chez Benoist
+1. En période scolaire, Lydie s'occupe des enfants les lundis et vendredis matins,
+2. En période scolaire, Benoist garde les enfants du dimanche soir au jeudi soir et un weekend sur deux,
+3. En période scolaire, le dîner et le coucher du dimanche soir se font chez Benoist.
+4. Le parent qui garde les enfants le weekend les récupère le vendredi soir avant de dîner (idem pour les périodes de vacances)
+    

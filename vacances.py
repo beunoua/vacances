@@ -18,6 +18,11 @@ MONTHS = ["Janv", "Févr", "Mars", "Avri", "Mai", "Juin", "Juil", "Août",
 
 class Date(datetime.date):
     """A simple date class with additional helper methods."""
+
+    @classmethod
+    def from_date(cls, date):
+        return cls(date.year, date.month, date.day)
+
     def weekday_str(self):
         """Returns a string corresponding to the week day."""
         return WEEKDAYS[self.weekday()]
@@ -25,6 +30,12 @@ class Date(datetime.date):
     def day_str(self):
         """Returns the date zero-padded day number."""
         return f"{self.day:02d}"
+    
+    def is_weekend(self):
+        return self.weekday() > 4
+    
+    def is_sunday(self):
+        return self.weekday() == 6
 
 
 class DateCollection:
@@ -114,13 +125,16 @@ class Care(DateCollection):
         users = [self.users[i] for i in order]
 
         first_weekid = weekid(start)
+        week_counter = 0
 
         for current_month in range(start.month, 13):
             for date in cal.itermonthdates(start.year, current_month):
-                if date >= start and (self.date_is_free(date) and date.weekday() > 4):
-                    week_counter = first_weekid + weekid(date)
+                date = Date.from_date(date)
+                if date >= start and (self.date_is_free(date) and date.is_weekend()):
                     mod = week_counter % self.nusers
                     self.append(users[mod], date)
+                if date.is_sunday():
+                    week_counter += 1
 
 
 class Calendar:
@@ -265,7 +279,7 @@ def write_pdf(html, path, zoom):
     }
 
     pdfkit.from_string(html, path, options=options)
-    print("Wrote output html to {}".format(path), file=sys.stderr)
+    print(f"Wrote output pdf to {path}", file=sys.stderr)
 
 
 def this_year():
@@ -315,6 +329,8 @@ def parse_command_line():
                         help="zoom factor for PDF rendering")
     parser.add_argument("-c", "--comments",
                         help="commentary file")
+    parser.add_argument("--output-dir", default=".",
+                        help="output directory for index.html and calendrier_vacances.pdf")
     args = parser.parse_args()
     args.year = guess_year(args)
     return args
@@ -328,6 +344,14 @@ def read_comments(path):
 
 def main():
     args = parse_command_line()
+
+    # Check output directory exists (and is a directory).
+    if not os.path.isdir(args.output_dir):
+        raise NotADirectoryError("invalid output directory "
+                                 f"'{args.output_dir}'")
+
+    output_html = os.path.join(args.output_dir, "index.html")
+    output_pdf = os.path.join(args.output_dir, "calendrier_vacances.pdf")
 
     # Default care start to January 1st unless specified.
     care_start = args.care_start
@@ -354,9 +378,9 @@ def main():
     html = cal.tohtml()
 
     # Calendar output.
-    write_html(html, "index.html")
+    write_html(html, output_html)
     if not args.no_pdf:
-        write_pdf(html, "calendrier_vacances.pdf", args.pdf_zoom)
+        write_pdf(html, output_pdf, args.pdf_zoom)
 
 
 if __name__ == "__main__":
