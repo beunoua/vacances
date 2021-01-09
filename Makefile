@@ -1,9 +1,11 @@
 .PHONY: 2020 2021
 
-all: 2020
+PDF_ZOOM = 1.1
+
+all: 2021
 
 2021: 2021/holidays_2021.yaml 2021/care_2021.yaml
-	python vacances.py --first-care lydie -c comments.txt --pdf-zoom 1.1 --output-dir $@ $^
+	python vacances.py --first-care lydie -c comments.txt --pdf-zoom $(PDF_ZOOM) --output-dir $@ $^
 
 2020: 2020/index.html
 
